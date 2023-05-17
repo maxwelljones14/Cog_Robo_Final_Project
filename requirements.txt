@@ -1,0 +1,6 @@
+external==0.0.1
+numpy==1.23.3
+opencv_contrib_python==4.6.0.66
+openvino==2022.3.0
+timm==0.6.13
+torchvision==0.13.1
