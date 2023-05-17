@@ -1,7 +1,7 @@
 # Cog_Robo_Final_Project
  Cognitive Robotics Final Project
 
-This codebase is built on fsm files, which requires a cozmo (duh), a way to run cozmo in SDK mode, and the [cozmo tools library](https://github.com/touretzkyds/cozmo-tools)
+This codebase is built on fsm files, which requires a [cozmo](https://www.digitaldreamlabs.com/products/cozmo-robot), a way to run cozmo in SDK mode, and the [cozmo tools library](https://github.com/touretzkyds/cozmo-tools)
 
 From here, you have to go to the requirements.txt file and make sure that you have pip installed all necessary requirements. If you haven't, definitely pip install all of them first. 
 
