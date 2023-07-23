@@ -77,21 +77,6 @@ class Depth(StateMachineProgram):
   def start(self):
     super().start()
     print("Type 'tm' to begin the depth process")
-#    print("image being updated")
-#    old_image = ima, = model.forward(sample)
-#        prediction = (
-#        torch.nn.functional.interpolate(
-#            prediction.unsqueeze(1),
-#            size=original_image_rgb.shape[1::-1][::-1],
-#            mode="bicubic",
-#            align_corners=False,
-#        )
-#        .squeeze()
-#        .cpu()
-#        .numpy()
-#        )
-#    depth = write_depth(prediction)
-#    return depth
 
   class DisplayCamera(StateNode):
     def start(self,event=None):
@@ -124,7 +109,6 @@ class Depth(StateMachineProgram):
         for image_box in image_boxes:
             middlex = image_box.top_left_x + image_box.width / 2
             lowy = np.array(old_image).shape[0] - (image_box.top_left_y + image_box.height)
-#             print(image_box.top_left_y, image_box.height, middlex, lowy)
             image_box_vals.append((middlex, lowy))
 
         # print(f"top left x: {image_box.top_left_x}, top left right: {image_box.top_left_y}, height: {image_box.height}, width: {image_box.width}")
@@ -203,7 +187,6 @@ class Depth(StateMachineProgram):
             for x in range(7):
                 for y in range(7):
                     prediction[prediction.shape[0] - int(round(lowy, 0))  + 3 - y, int(round(middlex, 0)) + 3 - x] = 0;
-#                     print(f"middle index: {middlex}, lowy: {lowy}")
 
         depth = write_depth(prediction)
         cv2.imwrite("im.png", depth)
@@ -212,14 +195,9 @@ class Depth(StateMachineProgram):
         cid = fig.canvas.mpl_connect('button_press_event', lambda x: onclick(x, prediction_normalized))
         plt.imshow(depth)
 
-        # if(middlex is not None and lowy is not None):
-        #     plt.scatter(np.array([middlex]), np.array([prediction.shape[0] - lowy]))
 
         plt.pause(0.01)
-        # print("plotted")
 
-      # cv2.imshow("thresh", gray_thresh)
-      # cv2.waitKey(0)
 
     
 
